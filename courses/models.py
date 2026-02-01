@@ -27,7 +27,5 @@ class Course(models.Model):
     instructor = models.ForeignKey(Instructor, on_delete=models.PROTECT)
     students = models.ManyToManyField(Student, related_name='courses')
 
-    class Course(models.Model):
-        def __str__(self):
-            return self.title
-
+    def __str__(self):
+        return self.title
