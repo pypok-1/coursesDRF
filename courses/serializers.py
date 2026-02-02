@@ -8,18 +8,36 @@ from .models import Student, Course, Instructor
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('last_name', 'email')
+        fields = ('id', 'name', 'last_name', 'email')
 
 
 class InstructorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Instructor
-        fields = ('last_name', 'email')
+        fields = ('id', 'name', 'last_name', 'email')
 
 
 class CourseSerializer(serializers.ModelSerializer):
     instructor = InstructorSerializer(read_only=True)
     students = StudentSerializer(many=True, read_only=True)
+    instructor_id = serializers.PrimaryKeyRelatedField(queryset=Instructor.objects.all(),source='instructor', write_only=True)
+    student_ids = serializers.PrimaryKeyRelatedField(queryset=Student.objects.all(),source='students', write_only=True, many=True)
 
     class Meta:
         model = Course
+        fields = ('id', 'title',
+                  'description',
+                  'start_date',
+                  'instructor',
+                  'students',
+                  'instructor_id',
+                  'student_ids')
+
+    def create(self, validated_data):
+        student_ids = validated_data.pop('student_ids', None)
+        course = Course.objects.create(**validated_data)
+        course.students.set(student_ids)
+        return course
+
+
+
