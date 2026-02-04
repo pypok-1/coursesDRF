@@ -24,7 +24,7 @@ class Student(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    start_date = models.DateTimeField()
+    start_date = models.DateField()
     instructor = models.ForeignKey(Instructor, on_delete=models.PROTECT)
     students = models.ManyToManyField(Student, related_name='courses')
 
