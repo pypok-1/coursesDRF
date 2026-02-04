@@ -48,5 +48,9 @@ class CourseDetailAPIView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def patch(self, request, pk):
-        
+        course = self.get_object(pk)
+        serializer = CourseSerializer(course,  partial=True, data=request.data )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
