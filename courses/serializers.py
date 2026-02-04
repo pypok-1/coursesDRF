@@ -1,5 +1,5 @@
 from typing import Any
-
+from django.utils import timezone
 from rest_framework import serializers
 
 from .models import Student, Course, Instructor
@@ -18,7 +18,7 @@ class InstructorSerializer(serializers.ModelSerializer):
 
     def validate_experience(self, value):
         if value < 0:
-            raise serializers.ValidationError("Experience cannot be --neg")
+            raise serializers.ValidationError("Experience can not be --neg")
         return value
 
 
@@ -55,3 +55,8 @@ class CourseSerializer(serializers.ModelSerializer):
             instance.students.set(student_ids)
         instance.save()
         return instance
+
+    def validate_start_date(self, value):
+        if value < timezone.now():
+            raise serializers.ValidationError("Cannot be in the past.")
+        return value
