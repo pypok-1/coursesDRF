@@ -7,7 +7,6 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python)](https://www.python.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-pypok--1-181717?style=for-the-badge&logo=github)](https://github.com/pypok-1/coursesDRF)
 
-**REST API для управления онлайн-курсами, студентами и преподавателями**
 
 </div>
 
