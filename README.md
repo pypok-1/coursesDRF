@@ -1,9 +1,6 @@
 # Online Courses API — Django REST Framework (Homework)
 
 
-
-# 🎓 Online Courses API — Django REST Framework
-
 <div align="center">
 
 [![Django REST Framework](https://img.shields.io/badge/Django_REST-Framework-0C4B33?style=for-the-badge&logo=django)](https://www.django-rest-framework.org/)
