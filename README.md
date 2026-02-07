@@ -1,5 +1,5 @@
 
-**<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MHB1dG80dnRxZTRiMWFkMzQyc3VkMWZ2ZTdodzRyNHdrbDg3YzhsdSZlcD12MV9zdGlja2Vyc190cmVuZGluZyZjdD1z/tpSOcUiiMnSS9kbAHA/giphy.gif" width="100"> Online Courses API — Django REST Framework (Homework)**
+**<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MHB1dG80dnRxZTRiMWFkMzQyc3VkMWZ2ZTdodzRyNHdrbDg3YzhsdSZlcD12MV9zdGlja2Vyc190cmVuZGluZyZjdD1z/tpSOcUiiMnSS9kbAHA/giphy.gif" width="60"> Online Courses API — Django REST Framework (Homework)**
 
 <div align="center">
 
